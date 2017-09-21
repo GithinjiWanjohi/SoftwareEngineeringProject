@@ -16,11 +16,7 @@ $result = mysqli_query($conn, $sql);
 		<div class='myform'> 
 		  <section id="body_wrap">
 		  	<center><h1 style="margin-bottom: 5px;">Transport Management System</h1></center>
-		  	<div id="error">    
-				  <?php
-				  echo "<style='color:red'>".$error."</style>";
-				  ?>  
-			</div>
+		  	
 			<form action="#" method="POST">
 			  <h1 id="head">View Schedule</h1><br>
 				<div id="table">
@@ -30,7 +26,7 @@ $result = mysqli_query($conn, $sql);
 				        <tr>
 				            <th>Schedule ID</th>
 				            <th>Destination</th>
-				            <th>Bus_ID</th>
+				            <th>Registration Name</th>
 				            <th>Date</th>
 				            <th>Depature Time</th>
 				            <th>Arrival Time</th>
@@ -52,7 +48,7 @@ $result = mysqli_query($conn, $sql);
 				            <!--Each table column is echoed in to a td cell-->
 				            <td><?php echo $row["Schedule_ID"]; ?></td>
 				            <td><?php echo $row["Destination"]; ?></td>
-				            <td><?php echo $row["Bus_ID"]; ?></td>
+				            <td><?php echo $row["Registration_No"]; ?></td>
 				            <td><?php echo $row["date"]; ?></td>
 				            <td><?php echo $row["depature_time"]; ?></td>
 				            <td><?php echo $row["arrival_time"]; ?></td>
