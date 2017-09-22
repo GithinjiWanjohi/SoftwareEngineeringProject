@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2017 at 07:29 AM
+-- Generation Time: Sep 22, 2017 at 10:35 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -28,9 +28,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `Admin_ID` int(11) NOT NULL,
-  `First_Name` varchar(30) NOT NULL,
-  `Surname` varchar(30) NOT NULL
+  `username` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Admin_ID`, `username`, `password`) VALUES
+(1, 'Wesley', '123'),
+(2, 'Githinji', '123');
 
 -- --------------------------------------------------------
 
@@ -53,7 +61,8 @@ CREATE TABLE `booking` (
 INSERT INTO `booking` (`Booking_ID`, `Customer_Name`, `Email`, `Phone`, `Schedule_ID`) VALUES
 (6, 'Githinji Wanjohi', 'gyth.wanjohi@gmail.com', '710700123', 1),
 (7, '', '', '', 0),
-(8, '', '', '', 0);
+(8, '', '', '', 0),
+(9, '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -63,9 +72,20 @@ INSERT INTO `booking` (`Booking_ID`, `Customer_Name`, `Email`, `Phone`, `Schedul
 
 CREATE TABLE `bus` (
   `Bus_ID` int(4) NOT NULL,
-  `Registration_No` varchar(7) NOT NULL,
-  `No_of_seats` int(2) NOT NULL
+  `Registration_No` varchar(8) NOT NULL,
+  `No_of_seats` int(2) NOT NULL,
+  `DriverName` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bus`
+--
+
+INSERT INTO `bus` (`Bus_ID`, `Registration_No`, `No_of_seats`, `DriverName`) VALUES
+(1, 'KBX857W', 40, 'Baba Bubba'),
+(2, 'KBX857W', 40, 'Baba Bubba'),
+(3, '', 0, ''),
+(4, 'KBW 345', 60, 'Donda');
 
 -- --------------------------------------------------------
 
@@ -76,9 +96,12 @@ CREATE TABLE `bus` (
 CREATE TABLE `schedule` (
   `Schedule_ID` int(4) NOT NULL,
   `Destinantion` varchar(30) NOT NULL,
-  `Bus_ID` int(4) NOT NULL,
-  `Departure_Time` datetime NOT NULL,
-  `Arrival Time` datetime NOT NULL
+  `Registration_No` varchar(7) NOT NULL,
+  `date` date NOT NULL,
+  `depature_time` time NOT NULL,
+  `arrival_time` time NOT NULL,
+  `fare` float NOT NULL,
+  `no_of_passengers` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -117,12 +140,17 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `Booking_ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Booking_ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `bus`
+--
+ALTER TABLE `bus`
+  MODIFY `Bus_ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `schedule`
 --
