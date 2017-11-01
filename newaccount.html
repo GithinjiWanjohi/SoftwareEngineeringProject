@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>New Account</title>
+<link
+rel="stylesheet"
+type="text/css"
+href="ycsms.css"/>
+<div>
+    <nav >
+<a ><img class="img" src="contact.PNG" style="width:2%;height:2%;">07112228222</a>
+<a style="float:right" href="www.facebook.com"><img class="img" src="facebook.ico" style="width:10%;height:10%;"></a>
+<a style="float:right"href="www.twitter.com"><img src="twitter.PNG" style="width:10%;height:10%;"></a>
+<a style="float:right"href="www.youtube.com" ><img src="youtube.JPG" style="width:10%;height:10%;"></a>
+</nav>
+
+
+<hr>
+</div>
+<div class="container-full joinbar">
+<div class="main"style="background-color:white; font-size:20px"> 
+	<header><nav><div class style="background-image:url(wbb.jpg); color:white"><img src="logo.png"style="width:100px; height:100px;"><a href="index.php"style="padding:50px;color:black;hover:red;">Home</a><a href="about.php"style="color:black; padding:50px;">About</a><a href="join.php"style="padding:25px; color:black;">How to Join</a><a href="contact.php"style="padding:25px;color:black;">Contact Us</a><a href="login.php"style="padding:25px;color:black;">Login</a></nav></header>
+
+
+</div>
+</div>
+    </head>
+    <body>
+
+
+<form name="registration" action="register.php" method="post" enctype="multipart/form-data">
+    
+<fieldset>
+    <legend >New Account  </legend>
+    <input type="file" name="Image"><br>Image<br><br>
+First Name:     <input type ="text" name="firstname"     placeholder="First Name"     required/><br><br>
+Last Name:      <input type ="text" name="lastname"      placeholder="Last Name"      required /><br><br>
+ID number:      <input type ="text" name="ID"            placeholder="ID number"      required /><br><br>
+Gender:         <input type ="text" name="gender"        placeholder="gender"         required /><br><br>
+Phone:          <input type ="text" name="contact"       placeholder="Phone Number"   required /><br><br>
+Email:          <input type="email" name="email"         placeholder="Email Address"  required /><br><br>
+Religion:       <input type ="text" name="religion"      placeholder="Religion"       required/><br><br>
+Residence:      <input type ="text" name="residence"     placeholder="residence"      required/><br><br>
+Constituency:   <input type ="text" name="constituency"  placeholder="constituency"   required /><br><br>
+Next Of Kin:    <input type ="text" name="kin"           placeholder="Next Of Kin"    required /><br><br>
+Next of Kin ID: <input type ="text" name="kinID"         placeholder="ID number"      required /><br><br>
+Account Number: <input type ="text" name="account"       placeholder="Account Number" required /><br><br>
+Password:       <input type ="password" name="password"         placeholder="Password"       required /><br><br />
+Confirm Password:<input type ="password" name="password1" placeholder="Confirm Password" required /><br><br><br>
+
+<input type="submit" value="Submit" />
+<input type="reset" value="Reset"  />
+
+</fieldset>
+</form>
+
+</body>
+</html>
